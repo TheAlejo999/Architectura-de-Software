@@ -1,10 +1,11 @@
 from Clases.client import Client
 from Clases.hotelManager import HotelManager
 
+# Este es el punto de entrada del programa
 def main():
     print("Hello from py-hotel-example!")
     
-    hotel_manager = HotelManager()
+    hotel_manager = HotelManager()# Creamos algunos clientes de ejemplo
 
     client1 = Client(id=1, name="John Doe", age=30, email="john.doe@example.com", isWalkIn=False)
     client2 = Client(id=2, name="Jane Smith", age=25, email="jane.smith@example.com", isWalkIn=False)
@@ -15,20 +16,20 @@ def main():
     client7 = Client(id=7, name="Frank Miller", age=45, email="frank.miller@example.com", isWalkIn=True)
     client8 = Client(id=8, name="Grace Lee", age=32, email="grace.lee@example.com", isWalkIn=True)
 
-    for c in [client1, client2, client3, client4, client5]:
+    for c in [client1, client2, client3, client4, client5]:# Agregamos clientes al hotel
         hotel_manager.add_client(c)
 
-    print("\nCurrent clients in the hotel:")
+    print("\nClientes actuales en el hotel:")# Mostramos los clientes actuales en el hotel
     for client in hotel_manager.rooms:
         print(client)
 
-    print("\n")
+    print("\n")# Probamos eliminar un cliente y mostramos la lista actualizada
     hotel_manager.remove_client(client1)
-    print("Clients after removing one:")
+    print("Clientes después de eliminar uno:")
     for client in hotel_manager.rooms:
         print(client)
 
-    print("\n")
+    print("\n")# Agregamos reservas al restaurante y vemos cómo se manejan las reglas de walk-ins y regulares
     hotel_manager.add_reservation(client1) 
     hotel_manager.add_reservation(client2) 
     hotel_manager.add_reservation(client3) 
