@@ -23,15 +23,15 @@ class HotelManager:# Clase para gestionar las operaciones del hotel, como client
 
         if client.isWalkIn:
             if total_reservations < 6 and walk_ins_count < 2:
-                print(f"Adding walk-in reservation for client: {client}") 
+                print(f"Agregar cliente por reserva sin cita: {client}") 
                 self.restaurant_reservations.append(client) 
             else:
-                print(f"No available slots for walk-in reservations for client: {client}") 
+                print(f"Cupos llenos para cliente walk-in: {client}") 
         else:
             if total_reservations < 6 and regulars_count < 4:
-                print(f"Adding reservation for client: {client}") 
+                print(f"Agregar cliente regular: {client}") 
                 self.restaurant_reservations.append(client) 
             else:
-                print(f"No available slots for reservations for client: {client}") 
+                print(f"Cupos llenos para cliente regular: {client}") 
 
         return self.restaurant_reservations 
